@@ -12,16 +12,16 @@ html {
 
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: #f1f1f1f1;
 }
+
+/* -------------------- Header ----------------- */
 
 header {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
   background-color: white;
   padding: 15px;
-  width: 100%;
 }
 
 img {
@@ -35,16 +35,7 @@ div.logo {
   justify-content: center;
 }
 
-h1 {
-  display: flex;
-  align-items: center;
-  float: left;
-  padding: 0 40px;
-  font-size: 30px;
-  color: #222222;
-}
-
-header ul {
+ header ul {
   float: right;
   margin-right: 80px;
 }
@@ -52,53 +43,233 @@ header ul {
 header ul li {
   display: inline-block;
   line-height: 80px;
-  margin: 0 18px;
+  margin: 0 20px;
 }
 
 header ul li a {
   color: black;
-  font-size: 17px;
+  font-size: 20px;
   text-decoration: none;
   transition: 0.3s ease;
 } 
 
-/* ----------------- Nav Hover -----------*/
+/* --------------- Nav Hover & active -----------*/
+
  header li a:hover {
-  color: #FF7000;
+  color: yellowgreen;
 }
 
 header li a:active {
  color: rgb(81, 116, 17);
 }
 
+/* --------------- Hero content ------------- */
 
-/* --------------- Banner content ------------- */
-
-.hero-banner {
+.hero {
   background-image: url(../images/Picture\ of\ me.JPG);
   background-size: cover;
   background-position: center;
   height: 70vh;
 }
 
-span{
-  color: #FF7000;
+span {
+  color: yellowgreen;
 }
 
-.hero-banner h2 {
+.hero h1 {
   color: white;
   text-align-items: center;
-  font-size: 70px;
+  font-size: 80px;
   padding: 20px;
   position: absolute;
   top: 150px;
   left: 50px;
   right: 100px;
-
 }
+
+/* ------------------ dark overlay ---------------- */
 
 .overlay {
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0, 0.6);
 }
+
+/* ----------- Navigation bar media query ----------- */
+
+@media screen and (max-width: 980px) {
+    
+  .hero h1 { 
+    font-size: 60px; 
+  }
+}
+
+/* ------------------- About me section --------------- */
+.page-section {
+  display: flex;
+  padding: 2em;
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+}
+
+.page-section h2 {
+  color:black;
+  padding-right: 2rem;
+  border-right: 2px solid yellowgreen;
+  vertical-align: top;
+  font-size: 40px;
+  text-align: right;
+  min-width: 250px;
+}
+
+article {
+  padding: 0px 40px;
+}
+
+article p {
+  color: black;
+}
+
+/* -------------------- Projects Section ---------------------- */
+
+#projects {
+  display: flex;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 450px 300px 300px;
+  grid-template-areas: 
+  "project1 project1"
+  "project2 project3"
+  "project4 project5"
+  ;
+}
+
+.grid.container {
+  margin-left: 40px;
+}
+
+/* ----  */
+.container div {
+  background: rgb(0, 0, 0,0.6);
+  width: 100%;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  font-size: 20px;
+}
+
+p {
+  color: yellowgreen;
+  font-size: 1rem;
+}
+
+.gridarea {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.gridarea:hover {
+  box-shadow: 4px 4px 10px 0px rgb(154, 205, 50);
+}
+
+.project1 {
+  grid-area: project1;
+  background-image: url("../images/design-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.project2 {
+  grid-area: project2;
+  background-image: url("../images/book-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.project3 {
+  grid-area: project3;
+  background-image: url("../images/laptop-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.project4 {
+  grid-area: project4;
+  background-image: url("../images/Phone-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.project5 {
+  grid-area: project5;
+  background-image: url("../images/think-twice-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 990px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(200px, 5);
+    grid-template-areas: 
+      "project1"
+      "project2"
+      "project3"
+      "project4"
+      "project5"
+    ;
+  }
+}
+
+/* ------------------ Contact Section -------------------- */
+
+.contact {
+  background-color: rgb(100, 100, 100);
+}
+
+#contact .contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#contact div a {
+  padding: 0px 30px;
+  font-size: 20px;
+  color:yellowgreen;
+  text-decoration: none;
+  transition: 0.4s ease;
+}
+
+#contact h2 {
+  color: white;
+}
+
+#contact div a:hover {
+  color: white;
+}
+
+.copyright {
+  background-color: rgb(119, 119, 119);
+  text-align: center;
+  padding-bottom: 10px;
+  padding: 20px 0px;
+  color: white;
+}
+
+
+
